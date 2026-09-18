@@ -30,5 +30,11 @@ jobs:
       - name: Verify
         run: |
           cd /home/ocp/docker/cv
-          docker compose exec -T cv wget -q -O /dev/null http://localhost/ \
-            || { echo "::error::cv is not serving after deploy"; docker compose logs --tail 30 cv; exit 1; }
+          # 127.0.0.1, not localhost: busybox wget tries ::1 first and nginx only listens on IPv4.
+          for i in 1 2 3 4 5; do
+            docker compose exec -T cv wget -q -O /dev/null http://127.0.0.1/ && exit 0
+            sleep 1
+          done
+          echo "::error::cv is not serving after deploy"
+          docker compose logs --tail 30 cv
+          exit 1

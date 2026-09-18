@@ -1,0 +1,34 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Pull latest
+        env:
+          # Per-job token: the repo is private, so the server checkout's own remote
+          # (https://git.lab-ocp.com) can't be pulled without credentials.
+          GITEA_TOKEN: ${{ gitea.token }}
+        run: |
+          git config --global --add safe.directory /home/ocp/docker/cv
+          cd /home/ocp/docker/cv
+          git -c "http.extraHeader=Authorization: token $GITEA_TOKEN" \
+            pull --ff-only http://server:3000/ocp/cv.git main
+
+      - name: Deploy
+        run: |
+          cd /home/ocp/docker/cv
+          # Recreate so nginx.conf changes apply: git replaces the file (new inode),
+          # and the single-file bind mount would otherwise keep serving the old one.
+          docker compose up -d --force-recreate --wait --wait-timeout 30
+
+      - name: Verify
+        run: |
+          cd /home/ocp/docker/cv
+          docker compose exec -T cv wget -q -O /dev/null http://localhost/ \
+            || { echo "::error::cv is not serving after deploy"; docker compose logs --tail 30 cv; exit 1; }

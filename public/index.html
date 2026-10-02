@@ -6,7 +6,7 @@
 		<title>Oscar Carballo Puebla — CV</title>
 		<meta
 			name="description"
-			content="Oscar Carballo Puebla — Backend & Data Engineer · Data pipelines · Integration"
+			content="Oscar Carballo Puebla — Backend & Data Developer · Python, SQL, dbt, Airflow"
 		/>
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +24,7 @@
 					<img src="/perfil.jpeg" alt="Oscar Carballo" class="welcome-avatar" />
 					<div class="welcome-hero-text">
 						<h1>Oscar Carballo Puebla</h1>
-						<p class="welcome-tagline">Backend &amp; Data Engineer · Data pipelines · Integration</p>
+						<p class="welcome-tagline">Backend &amp; Data Developer · Python, SQL, dbt, Airflow</p>
 						<div class="welcome-hero-links">
 							<a
 								href="https://github.com/OscarCarPu"
@@ -70,18 +70,15 @@
 				<div class="welcome-section">
 					<h2>About</h2>
 					<p>
-						I'm Oscar Carballo, a backend developer working on Django REST Framework services
-						and search, including Elasticsearch-backed search engines, on top of PostgreSQL.
-						I also have hands-on experience building data pipelines with FastAPI, Flask, Kafka,
-						ZeroMQ and Airflow.
+						Python backend and data developer with 3+ years of professional experience. At
+						Sixtema I built end-to-end Python data pipelines with Airflow and FastAPI; today, at
+						Nazaries Intelligenia, I take over legacy Django REST APIs on PostgreSQL and bring
+						them up to current standards. I'm focusing my career on data engineering.
 					</p>
 					<p class="mt">
-						Currently pursuing a Data Science degree at UOC, I'm steering my career toward data
-						engineering and Big Data. Outside of work I run an end-to-end IoT data platform as a
-						personal project — Rust firmware on the devices, a Go service handling ingestion, and
-						dbt modelling the pipeline downstream on Postgres with a medallion architecture. I
-						actively explore Go, Rust and IoT, and I'm passionate about automating both my
-						workflows and everyday processes.
+						Outside work I run an end-to-end IoT data platform: a Go service ingesting device
+						data over MQTT, and dbt models on PostgreSQL following a medallion architecture
+						(bronze → silver → gold). I'm also studying Applied Data Science at UOC.
 					</p>
 				</div>
 
@@ -91,14 +88,12 @@
 						<span class="skill-chip">Python</span>
 						<span class="skill-chip">SQL</span>
 						<span class="skill-chip">PostgreSQL</span>
-						<span class="skill-chip">Elasticsearch</span>
-						<span class="skill-chip">Django REST</span>
-						<span class="skill-chip">FastAPI</span>
-						<span class="skill-chip">Apache Airflow</span>
 						<span class="skill-chip">dbt</span>
-						<span class="skill-chip">Data pipelines</span>
+						<span class="skill-chip">Apache Airflow</span>
+						<span class="skill-chip">FastAPI</span>
 						<span class="skill-chip">Go</span>
-						<span class="skill-chip">Rust</span>
+						<span class="skill-chip">Docker</span>
+						<span class="skill-chip">Django REST</span>
 					</div>
 					<div class="lang-chips">
 						<span class="lang-chip"><span class="lang-name">Spanish</span> Native</span>
@@ -149,10 +144,11 @@
 								central-pipeline
 							</div>
 							<div class="project-desc">
-								Central IoT data pipeline — Go MQTT consumer + dbt on Postgres, medallion
+								End-to-end IoT data pipeline for my home lab: a Go service consumes device
+								readings over MQTT into PostgreSQL, and dbt models them through a medallion
 								architecture (bronze → silver → gold).
 							</div>
-							<div class="project-lang"><span>Go · dbt</span></div>
+							<div class="project-lang"><span>Go · dbt · PostgreSQL</span></div>
 						</a>
 						<a
 							href="https://github.com/OscarCarPu/mutual-watchdog"
@@ -173,26 +169,6 @@
 								Mutual watchdog between a home lab (Go) and an external node to detect outages.
 							</div>
 							<div class="project-lang"><span>Rust</span></div>
-						</a>
-						<a
-							href="https://github.com/OscarCarPu/gv-api"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="project-item"
-						>
-							<div class="project-name">
-								<svg class="icon" viewBox="0 0 512 512">
-									<path
-										fill="currentColor"
-										d="M64 480H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64z"
-									/>
-								</svg>
-								gv-api
-							</div>
-							<div class="project-desc">
-								Go REST API powering GV — habits, tasks, time tracking, finance and more.
-							</div>
-							<div class="project-lang"><span>Go</span></div>
 						</a>
 					</div>
 				</div>

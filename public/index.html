@@ -18,8 +18,7 @@
 		<link rel="stylesheet" href="/style.css" />
 	</head>
 	<body>
-		<div class="welcome-page">
-			<div class="welcome-content">
+		<div class="welcome-page"> <div class="welcome-content">
 				<div class="welcome-hero">
 					<img src="/perfil.jpeg" alt="Oscar Carballo" class="welcome-avatar" />
 					<div class="welcome-hero-text">
@@ -151,12 +150,7 @@
 							</div>
 							<div class="project-lang"><span>Go · dbt · PostgreSQL</span></div>
 						</a>
-						<a
-							href="https://github.com/OscarCarPu/mutual-watchdog"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="project-item"
-						>
+						<div class="project-item">
 							<div class="project-name">
 								<svg class="icon" viewBox="0 0 512 512">
 									<path
@@ -164,13 +158,13 @@
 										d="M64 480H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64z"
 									/>
 								</svg>
-								mutual-watchdog
+                            aws-failover
 							</div>
 							<div class="project-desc">
-								Watchdog and failover for my home lab: an ESP32 and a Go service monitor each other over MQTT, and a failover on AWS (Lambda, EC2, S3 and SSM, deployed with SAM) takes over when the lab goes down.
+								Failover for my home lab on AWS, deployed with SAM: a Lambda checks the lab's health every 5 minutes and, when it's down, starts a standby EC2 instance restored from S3 backups and switches traffic to it. State and secrets live in SSM.
 							</div>
-							<div class="project-lang"><span>Rust · Go · MQTT · AWS</span></div>
-						</a>
+							<div class="project-lang"><span>AWS SAM · Lambda · EC2 · S3 · SSM</span></div>
+						</div>
 					</div>
 				</div>
 			</div>

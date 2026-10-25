@@ -20,7 +20,6 @@
 	<body>
 		<div class="welcome-page"> <div class="welcome-content">
 				<div class="welcome-hero">
-					<img src="/perfil.jpeg" alt="Oscar Carballo" class="welcome-avatar" />
 					<div class="welcome-hero-text">
 						<h1>Oscar Carballo Puebla</h1>
 						<p class="welcome-tagline">Backend &amp; Data Developer · Python, SQL, dbt, Airflow</p>
@@ -71,13 +70,11 @@
 					<p>
 						Python backend and data developer with 3+ years of professional experience. At
 						Sixtema I built end-to-end Python data pipelines with Airflow and FastAPI; today, at
-						Nazaries Intelligenia, I take over legacy Django REST APIs on PostgreSQL and bring
+						Nazaries, I take over legacy Django REST APIs on PostgreSQL and bring
 						them up to current standards. I'm focusing my career on data engineering.
 					</p>
 					<p class="mt">
-						Outside work I run an end-to-end IoT data platform: a Go service ingesting device
-						data over MQTT, and dbt models on PostgreSQL following a medallion architecture
-						(bronze → silver → gold). I'm also studying Applied Data Science at UOC.
+						Outside work I enjoy side projects, either to experiment with new technologies or as learning projects to improve. I'm also studying Applied Data Science at UOC.
 					</p>
 				</div>
 
@@ -90,10 +87,18 @@
 						<span class="skill-chip">dbt</span>
 						<span class="skill-chip">Apache Airflow</span>
 						<span class="skill-chip">FastAPI</span>
-						<span class="skill-chip">Go</span>
 						<span class="skill-chip">Docker</span>
 						<span class="skill-chip">AWS (Lambda, EC2, S3, SSM)</span>
 						<span class="skill-chip">Django REST</span>
+					</div>
+					<p class="mt" style="margin-bottom:0.5rem;">Also worked with:</p>
+					<div class="skill-chips">
+						<span class="skill-chip">Go</span>
+						<span class="skill-chip">ZeroMQ</span>
+						<span class="skill-chip">MQTT</span>
+						<span class="skill-chip">Flask</span>
+						<span class="skill-chip">Kafka</span>
+						<span class="skill-chip">Rust</span>
 					</div>
 					<div class="lang-chips">
 						<span class="lang-chip"><span class="lang-name">Spanish</span> Native</span>
@@ -144,9 +149,9 @@
 								central-pipeline
 							</div>
 							<div class="project-desc">
-								End-to-end IoT data pipeline for my home lab: a Go service consumes device
-								readings over MQTT into PostgreSQL, and dbt models them through a medallion
-								architecture (bronze → silver → gold).
+								Central data pipeline for all my home automation and IoT projects: a Go service
+								consumes device readings over MQTT into PostgreSQL, and dbt models them through
+								a medallion architecture (bronze → silver → gold).
 							</div>
 							<div class="project-lang"><span>Go · dbt · PostgreSQL</span></div>
 						</a>
@@ -161,7 +166,7 @@
                             aws-failover
 							</div>
 							<div class="project-desc">
-								Failover for my home lab on AWS, deployed with SAM: a Lambda checks the lab's health every 5 minutes and, when it's down, starts a standby EC2 instance restored from S3 backups and switches traffic to it. State and secrets live in SSM.
+								A failover on AWS (Lambda, EC2, S3 and SSM, deployed with SAM).
 							</div>
 							<div class="project-lang"><span>AWS SAM · Lambda · EC2 · S3 · SSM</span></div>
 						</div>
